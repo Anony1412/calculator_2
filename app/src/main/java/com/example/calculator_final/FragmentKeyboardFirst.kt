@@ -1,6 +1,7 @@
 package com.example.calculator_final
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,15 @@ import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_keyboard_1.*
 
 class FragmentKeyboardFirst : Fragment() {
+
+    enum class ButtonType (){
+        NUMBER,
+        OPERATOR,
+        DELETE,
+        CLEAR,
+        CALCULATING,
+        CHANGEKEYBOARD
+    }
 
     var communicator: Communicator? = null
 
@@ -24,36 +34,37 @@ class FragmentKeyboardFirst : Fragment() {
         super.onResume()
 
         // Number
-        btnNumZero.setOnClickListener { communicator?.respondData("number", "0") }
-        btnNumOne.setOnClickListener { communicator?.respondData("number", "1") }
-        btnNumTwo.setOnClickListener { communicator?.respondData("number", "2") }
-        btnNumThree.setOnClickListener { communicator?.respondData("number", "3") }
-        btnNumFour.setOnClickListener { communicator?.respondData("number", "4") }
-        btnNumFive.setOnClickListener { communicator?.respondData("number", "5") }
-        btnNumSix.setOnClickListener { communicator?.respondData("number", "6") }
-        btnNumSeven.setOnClickListener { communicator?.respondData("number", "7") }
-        btnNumEight.setOnClickListener { communicator?.respondData("number", "8") }
-        btnNumNight.setOnClickListener { communicator?.respondData("number", "9") }
+        buttonNumZero.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, "0") }
+        buttonNumOne.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, "1") }
+        buttonNumTwo.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, "2") }
+        buttonNumThree.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, "3") }
+        buttonNumFour.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, "4") }
+        buttonNumFive.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, "5") }
+        buttonNumSix.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, "6") }
+        buttonNumSeven.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, "7") }
+        buttonNumEight.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, "8") }
+        buttonNumNight.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, "9") }
 
         // Operator
-        btnPlus.setOnClickListener { communicator?.respondData("operator", "+") }
-        btnMinus.setOnClickListener { communicator?.respondData("operator", "-") }
-        btnMulti.setOnClickListener { communicator?.respondData("operator", "*") }
-        btnDivide.setOnClickListener { communicator?.respondData("operator", "/") }
-        btnMod.setOnClickListener { communicator?.respondData("operator", "%") }
-        btnDot.setOnClickListener { communicator?.respondData("operator", ".") }
+        buttonPlus.setOnClickListener { communicator?.respondData(ButtonType.OPERATOR, "+") }
+        buttonMinus.setOnClickListener { communicator?.respondData(ButtonType.OPERATOR, "-") }
+        buttonMulti.setOnClickListener { communicator?.respondData(ButtonType.OPERATOR, "*") }
+        buttonDivide.setOnClickListener { communicator?.respondData(ButtonType.OPERATOR, "/") }
+        buttonMod.setOnClickListener { communicator?.respondData(ButtonType.OPERATOR, "%") }
+        buttonDot.setOnClickListener { communicator?.respondData(ButtonType.OPERATOR, ".") }
 
         // Delete
-        btnDel.setOnClickListener { communicator?.respondData("delete", "delete") }
+        buttonDel.setOnClickListener { communicator?.respondData(ButtonType.DELETE, "delete") }
 
         // Clear
-        btnAC.setOnClickListener { communicator?.respondData("clear", "clear") }
+        buttonAC.setOnClickListener { communicator?.respondData(ButtonType.CLEAR, "clear") }
 
         // Calculating
-        btnEquals.setOnClickListener { communicator?.respondData("calculating", "calculating") }
+        buttonEquals.setOnClickListener { communicator?.respondData(ButtonType.CALCULATING, "calculating") }
 
         // Change Keyboard
-        btnChangeKeyboard.setOnClickListener { communicator?.respondData("changeKeyboard", "changeKeyboard") }
-    }
+        buttonChangeKeyboard.setOnClickListener { communicator?.respondData(ButtonType.CHANGEKEYBOARD, "changeKeyboard") }
 
+        Log.d("TAG", ButtonType.NUMBER.toString())
+    }
 }

@@ -2,10 +2,11 @@ package com.example.calculator_final
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import kotlinx.android.synthetic.main.activity_constraints.*
+import kotlinx.android.synthetic.main.activity_design.*
 import net.objecthunter.exp4j.ExpressionBuilder
 
 class DesignActivity : AppCompatActivity(), Communicator {
@@ -18,7 +19,7 @@ class DesignActivity : AppCompatActivity(), Communicator {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_constraints)
+        setContentView(R.layout.activity_design)
 
         /**
          * create first fragment keyboard
@@ -32,7 +33,7 @@ class DesignActivity : AppCompatActivity(), Communicator {
     /**
      * get data returned from fragment
      */
-    override fun respondData(key: String, value: String) {
+    override fun respondData(key: Any, value: String) {
         /**
          * if key = number -> value is appended to expression, isCanClear = true
          * if key = operator -> value is appended to expression, isCanClear = false
@@ -41,23 +42,32 @@ class DesignActivity : AppCompatActivity(), Communicator {
          * if key = calculating -> calculating expression
          * if key = changeKeyboard -> change fragment
          */
-        if (key.equals("number")) {
-            appendOnExpression(value, true)
-        } else if (key.equals("operator")) {
-            appendOnExpression(value, false)
-        } else if (key.equals("delete")) {
-            if (tvExpression.text.isNotEmpty()) {
-                tvExpression.text =
-                    tvExpression.text.toString().substring(0, tvExpression.text.length - 1)
-            }
-        } else if (key.equals("clear")) {
-            tvResult.text = ""
-            tvExpression.text = ""
-        } else if (key.equals("calculating")) {
-            calculatingExpression()
-        } else if (key.equals("changeKeyboard")) {
-            changeKeyboard()
+        when (key) {
+            FragmentKeyboardFirst.ButtonType.NUMBER -> appendOnExpression(value, true)
+            FragmentKeyboardFirst.ButtonType.OPERATOR -> appendOnExpression(value, false)
+            FragmentKeyboardFirst.ButtonType.DELETE -> deleteOnExpression()
+            FragmentKeyboardFirst.ButtonType.CLEAR -> clearScreen()
+            FragmentKeyboardFirst.ButtonType.CALCULATING -> calculatingExpression()
+            FragmentKeyboardFirst.ButtonType.CHANGEKEYBOARD -> changeKeyboard()
         }
+    }
+
+    /**
+     * delete last character on expression
+     */
+    private fun deleteOnExpression() {
+        if (tvExpression.text.isNotEmpty()) {
+            tvExpression.text =
+                tvExpression.text.toString().substring(0, tvExpression.text.length - 1)
+        }
+    }
+
+    /**
+     * clear everything on screen
+     */
+    private fun clearScreen() {
+        tvResult.text = ""
+        tvExpression.text = ""
     }
 
     /**

@@ -27,78 +27,78 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <Button
-        android:id="@+id/btnAC"
+        android:id="@+id/buttonAC"
+        style="@style/ButtonAction"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="AC"
-        style="@style/ButtonAction"
+        android:layout_margin="@dimen/dp_1"
+        android:text="@string/title_ac"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toStartOf="@+id/guideline11"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="1dp"/>
-
-    <ImageButton
-        android:id="@+id/btnChangeKeyboard"
-        style="@style/ButtonAction"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="1dp"
-        android:onClick="changeKeyboard"
-        android:src="@drawable/ic_change"
-        android:text="change"
-        app:layout_constraintBottom_toTopOf="@+id/guideline9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline11"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnSin"
+    <ImageButton
+        android:id="@+id/buttonChangeKeyboard"
+        style="@style/ButtonAction"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="sin"
+        android:layout_margin="@dimen/dp_1"
+        android:onClick="changeKeyboard"
+        android:src="@drawable/ic_change"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline11"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/title_description_button_change" />
+
+    <Button
+        android:id="@+id/buttonSin"
         style="@style/ButtonData"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/dp_1"
+        android:text="@string/title_sin"
         app:layout_constraintBottom_toTopOf="@+id/guideline10"
         app:layout_constraintEnd_toStartOf="@+id/guideline11"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline9"
-        android:layout_margin="1dp"/>
+        app:layout_constraintTop_toTopOf="@+id/guideline9" />
 
     <Button
-        android:id="@+id/btnCos"
+        android:id="@+id/buttonCos"
         style="@style/ButtonData"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="cos"
+        android:layout_margin="@dimen/dp_1"
+        android:text="@string/title_cos"
         app:layout_constraintBottom_toTopOf="@+id/guideline10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline11"
-        app:layout_constraintTop_toTopOf="@+id/guideline9"
-        android:layout_margin="1dp"/>
+        app:layout_constraintTop_toTopOf="@+id/guideline9" />
 
     <Button
-        android:id="@+id/btnTan"
+        android:id="@+id/buttonTan"
+        style="@style/ButtonData"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="tan"
-        style="@style/ButtonData"
+        android:layout_margin="@dimen/dp_1"
+        android:text="@string/title_tan"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline11"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline10"
-        android:layout_margin="1dp"/>
+        app:layout_constraintTop_toTopOf="@+id/guideline10" />
 
     <Button
-        android:id="@+id/btnCot"
+        android:id="@+id/buttonCot"
+        style="@style/ButtonData"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="cot"
-        style="@style/ButtonData"
+        android:layout_margin="@dimen/dp_1"
+        android:text="@string/title_cot"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline11"
-        app:layout_constraintTop_toTopOf="@+id/guideline10"
-        android:layout_margin="1dp"/>
+        app:layout_constraintTop_toTopOf="@+id/guideline10" />
 </androidx.constraintlayout.widget.ConstraintLayout>

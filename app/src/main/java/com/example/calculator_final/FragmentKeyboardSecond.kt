@@ -24,15 +24,15 @@ class FragmentKeyboardSecond : Fragment() {
         super.onResume()
 
         // Operator
-        btnSin.setOnClickListener { communicator?.respondData("operator", "sin(") }
-        btnCos.setOnClickListener { communicator?.respondData("operator", "cos(") }
-        btnTan.setOnClickListener { communicator?.respondData("operator", "tan(") }
-        btnCot.setOnClickListener { communicator?.respondData("operator", "cot(") }
+        buttonSin.setOnClickListener { communicator?.respondData("operator", "sin(") }
+        buttonCos.setOnClickListener { communicator?.respondData("operator", "cos(") }
+        buttonTan.setOnClickListener { communicator?.respondData("operator", "tan(") }
+        buttonCot.setOnClickListener { communicator?.respondData("operator", "cot(") }
 
         // Clear
-        btnAC.setOnClickListener { communicator?.respondData("clear", "clear") }
+        buttonAC.setOnClickListener { communicator?.respondData("clear", "clear") }
 
         // Change Keyboard
-        btnChangeKeyboard.setOnClickListener { communicator?.respondData("changeKeyboard", "changeKeyboard") }
+        buttonChangeKeyboard.setOnClickListener { communicator?.respondData("changeKeyboard", "changeKeyboard") }
     }
 }
