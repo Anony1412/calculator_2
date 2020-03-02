@@ -11,10 +11,6 @@ import net.objecthunter.exp4j.ExpressionBuilder
 
 class DesignActivity : AppCompatActivity(), Communicator {
 
-    companion object {
-        const val TAG: String = "TAG"
-    }
-
     var isFragmentOneDisplay: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -99,7 +95,7 @@ class DesignActivity : AppCompatActivity(), Communicator {
             if (result == longResult.toDouble()) tvResult.text = longResult.toString()
             else tvResult.text = result.toString()
         } catch (e: Exception) {
-            Log.d(TAG, "exceptionMessage: " + e.message)
+            // do something
         }
     }
 

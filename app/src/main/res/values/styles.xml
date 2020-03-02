@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="TextViewStyle">
+    <style name="TextStyle">
         <item name="android:textSize">@dimen/sp_24</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:gravity">center</item>
