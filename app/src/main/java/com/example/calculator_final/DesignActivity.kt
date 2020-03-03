@@ -11,7 +11,7 @@ import net.objecthunter.exp4j.ExpressionBuilder
 
 class DesignActivity : AppCompatActivity(), Communicator {
 
-    var isFragmentOneDisplay: Boolean = false
+    var isFragmentOneDisplay = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +29,7 @@ class DesignActivity : AppCompatActivity(), Communicator {
     /**
      * get data returned from fragment
      */
-    override fun respondData(key: Any, value: String) {
+    override fun respondData(key: FragmentKeyboardFirst.ButtonType, value: String) {
         /**
          * if key = number -> value is appended to expression, isCanClear = true
          * if key = operator -> value is appended to expression, isCanClear = false

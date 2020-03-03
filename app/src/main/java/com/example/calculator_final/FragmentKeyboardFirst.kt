@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.fragment_keyboard_1.*
 
 class FragmentKeyboardFirst : Fragment() {
 
-    enum class ButtonType (){
+    enum class ButtonType {
         NUMBER,
         OPERATOR,
         DELETE,
@@ -34,24 +34,24 @@ class FragmentKeyboardFirst : Fragment() {
         super.onResume()
 
         // Number
-        buttonNumZero.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, "0") }
-        buttonNumOne.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, "1") }
-        buttonNumTwo.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, "2") }
-        buttonNumThree.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, "3") }
-        buttonNumFour.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, "4") }
-        buttonNumFive.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, "5") }
-        buttonNumSix.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, "6") }
-        buttonNumSeven.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, "7") }
-        buttonNumEight.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, "8") }
-        buttonNumNight.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, "9") }
+        buttonNumZero.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, buttonNumZero.text.toString()) }
+        buttonNumOne.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, buttonNumOne.text.toString()) }
+        buttonNumTwo.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, buttonNumTwo.text.toString()) }
+        buttonNumThree.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, buttonNumThree.text.toString()) }
+        buttonNumFour.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, buttonNumFour.text.toString()) }
+        buttonNumFive.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, buttonNumFive.text.toString()) }
+        buttonNumSix.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, buttonNumSix.text.toString()) }
+        buttonNumSeven.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, buttonNumSeven.text.toString()) }
+        buttonNumEight.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, buttonNumEight.text.toString()) }
+        buttonNumNight.setOnClickListener { communicator?.respondData(ButtonType.NUMBER, buttonNumNight.text.toString()) }
 
         // Operator
-        buttonPlus.setOnClickListener { communicator?.respondData(ButtonType.OPERATOR, "+") }
-        buttonMinus.setOnClickListener { communicator?.respondData(ButtonType.OPERATOR, "-") }
-        buttonMulti.setOnClickListener { communicator?.respondData(ButtonType.OPERATOR, "*") }
-        buttonDivide.setOnClickListener { communicator?.respondData(ButtonType.OPERATOR, "/") }
-        buttonMod.setOnClickListener { communicator?.respondData(ButtonType.OPERATOR, "%") }
-        buttonDot.setOnClickListener { communicator?.respondData(ButtonType.OPERATOR, ".") }
+        buttonPlus.setOnClickListener { communicator?.respondData(ButtonType.OPERATOR, buttonPlus.text.toString()) }
+        buttonMinus.setOnClickListener { communicator?.respondData(ButtonType.OPERATOR, buttonMinus.text.toString()) }
+        buttonMulti.setOnClickListener { communicator?.respondData(ButtonType.OPERATOR, buttonMulti.text.toString()) }
+        buttonDivide.setOnClickListener { communicator?.respondData(ButtonType.OPERATOR, buttonDivide.text.toString()) }
+        buttonMod.setOnClickListener { communicator?.respondData(ButtonType.OPERATOR, buttonMod.text.toString()) }
+        buttonDot.setOnClickListener { communicator?.respondData(ButtonType.OPERATOR, buttonDot.text.toString()) }
 
         // Delete
         buttonDel.setOnClickListener { communicator?.respondData(ButtonType.DELETE, "delete") }
@@ -64,7 +64,5 @@ class FragmentKeyboardFirst : Fragment() {
 
         // Change Keyboard
         buttonChangeKeyboard.setOnClickListener { communicator?.respondData(ButtonType.CHANGEKEYBOARD, "changeKeyboard") }
-
-        Log.d("TAG", ButtonType.NUMBER.toString())
     }
 }

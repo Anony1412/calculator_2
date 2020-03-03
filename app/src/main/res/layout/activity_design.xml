@@ -25,7 +25,7 @@
 
     <TextView
         android:id="@+id/tvResult"
-        style="@style/TextViewStyle"
+        style="@style/TextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/dp_24"
@@ -35,7 +35,7 @@
 
     <TextView
         android:id="@+id/tvExpression"
-        style="@style/TextViewStyle"
+        style="@style/TextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/dp_24"
