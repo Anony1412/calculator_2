@@ -1,3 +1,27 @@
 <resources>
-    <string name="app_name">Calculator_Final</string>
+    <string name="app_name">CalculatorExample</string>
+    <string name="preferences_file_key">Last Result</string>
+    <string name="title_ac">AC</string>
+    <string name="title_mod">%</string>
+    <string name="title_divide">/</string>
+    <string name="title_number_seven">7</string>
+    <string name="title_number_eight">8</string>
+    <string name="title_number_night">9</string>
+    <string name="title_multi">*</string>
+    <string name="title_plus">+</string>
+    <string name="title_number_six">6</string>
+    <string name="title_number_five">5</string>
+    <string name="title_number_four">4</string>
+    <string name="title_number_one">1</string>
+    <string name="title_number_two">2</string>
+    <string name="title_number_three">3</string>
+    <string name="title_minus">-</string>
+    <string name="title_equals">=</string>
+    <string name="title_dot">.</string>
+    <string name="title_number_zero">0</string>
+    <string name="title_sin">sin</string>
+    <string name="title_cos">cos</string>
+    <string name="title_cot">cot</string>
+    <string name="title_tan">tan</string>
+    <string name="title_description_button_change">swap between two fragment</string>
 </resources>
